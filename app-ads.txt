@@ -1,1 +1,40 @@
+# app-ads.txt — Gikeon
+# Authorized Digital Sellers for Apps (IAB Tech Lab). Covers every Gikeon app whose
+# Play listing points its Developer Website at https://gikeonsupport-hub.github.io/
+#
+# WHY THIS FILE MATTERS
+# A DSP deciding whether to bid on an impression from one of our apps reads the developer
+# website from the Play listing, fetches /app-ads.txt from its root, and only accepts bid
+# requests from sellers named here. Without a matching line, most demand — including
+# Google's own DV360 — will not bid at all.
+#
+# RULES THAT ARE EASY TO GET WRONG
+#   * It must live at the ROOT of the domain: https://gikeonsupport-hub.github.io/app-ads.txt
+#     A project-page path such as /repo-name/app-ads.txt is NOT crawled.
+#   * It must be served as text/plain over HTTPS. GitHub Pages does this for a .txt file.
+#   * The Play Console listing must name this exact site under
+#     Store settings -> Store listing contact details -> Website.
+#   * Changes take up to 24h. AdMob -> Apps -> app-ads.txt has a "Check for updates" button
+#     and shows the verification status per app.
+#
+# ---------------------------------------------------------------------------------------
+# Google AdMob — our own publisher account. One line covers every Gikeon app.
 google.com, pub-4345634793117778, DIRECT, f08c47fec0942fa0
+
+# ---------------------------------------------------------------------------------------
+# MEDIATION PARTNERS
+#
+# Every network that is actually configured in the AdMob console needs its OWN line here,
+# with the publisher/seller id that network issued to us. Those ids are not ours to invent —
+# each partner publishes its required line in its own dashboard.
+#
+# The build currently compiles adapters for AppLovin, Chartboost, InMobi, Mintegral, Moloco,
+# Pangle, Unity Ads and Vungle/Liftoff. An adapter that is compiled in but NOT set up in the
+# AdMob console never serves, and needs no line. So add a line only when that partner is live
+# in a mediation group.
+#
+# AdMob -> Apps -> app-ads.txt lists the entries Google expects for the partners it can see,
+# which is the quickest way to get this right.
+#
+# Example of the shape (DO NOT ship this line — it is not a real seller id):
+#   applovin.com, <the-id-AppLovin-issued-us>, DIRECT, <their-certification-id>
